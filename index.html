@@ -4,9 +4,119 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
     <title>Home</title>
 </head>
 <body>
-    
+    <section class="navbar" id="mynav">
+        <a href="#mynav">Home</a>
+        <a href="#about">About me</a>
+        <a href="#services">Services</a>
+        <a href="#porti">Portifolio</a>
+        <a href="/pages/blog.html">Blog</a>
+        <a href="#contactMe">Contact</a>
+        <a href="/pages/login.html">Login</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <span class="iconify" data-icon="ci:menu-alt-02" style="color: #0FA958; font-size: 43px;"></span>
+        </a>
+            
+    </section>
+    <section class="flex-intro" id="home">
+        <div class="left" id="Home">
+            <img src="images/me.jpg" max-width="100%" class="profile" alt="">
+        </div>
+        <div class="right">
+            <h1 class="name">Florien Niyongabo ,</h2>
+            <h3>Web, Software Developer and Designer</h3>
+            <p class="word">
+                I’m a software/web developer who is passionate about creating interactive web,android applications and helping users interact with different technologies at the highest level.
+            </p>
+        </div>
+    </section>
+    <section class="aboutme" id="about">
+        <h3 class="h-about">About Me</h3>
+        <p class="p-about">
+            Since beginning my journey as a technology enthusiast 
+            nearly 7 years ago,i have studied a lot of programming <br> languages like C, C++, VB, PHP and I've worked on some projects for educational purposes,
+            <br> and collaborated with talented people to reallife systems for both business and individual use. <br>
+            I believe in continous learning and adapting to new things to keep being relevant.
+        </section>
+    </div>
+    <section class="row" id="services">
+        <div class="column1">
+            <!-- <object data="images/icons/sw.svg" width="50" height="50"> </object> -->
+            <span class="iconify" data-icon="bx:bx-code-alt"></span>
+            <h3 class="c-header1">Software Development</h3>
+            <h4 class="lang">Languages</h4>
+            <p class="lang-list">PHP, Node JS, Django</p>
+            <h4 class="dev">Dev Tools</h4>
+            <p class="lang-list">VS Code, Atom </p>
+            <p class="lang-list">Github </p>
+            <p class="lang-list">Terminal </p>
+        </div>
+        <div class="column2">
+            <!-- <object data="images/icons/fe.svg" width="50" height="50"> </object> -->
+            <span class="iconify" data-icon="iconoir:apple-imac-2021"></span>
+            <h3 class="c-header1">Front-end Development</h3>
+            <h4 class="lang">Languages</h4>
+            <p class="lang-list">HTML, CSS</p>
+            <h4 class="dev">Dev Tools</h4>
+            <p class="lang-list">VS Code, Atom </p>
+            <p class="lang-list">Github </p>
+            <p class="lang-list">Terminal </p>
+            <p class="lang-list">Bootstrap </p>
+        </div>
+        <div class="column3">
+            <!-- <object data="images/icons/design.svg" width="50" height="50"> </object> -->
+            <span class="iconify" data-icon="ic:outline-design-services"></span>
+            <h3 class="c-header1">Design</h3>
+            <h4 class="lang">What i design</h4>
+            <p class="lang-list">UI, Web and Mobile</p>
+            <h4 class="dev">Design Tools</h4>
+            <p class="lang-list">Figma</p>
+        </div>  
+    </section>
+    <section class="portifolio">
+    <h3 class="p-header" id="portifolio">Portifolio</h3>
+    <p class="p-desc">
+        I believe in continous learning and adapting to new things to keep being relevant. 
+        Collaborated with talented people to reallife systems for both business and individual use.
+    </p>
+    <div class="project1">
+        <img src="images/g.jfif" alt="" class="img-1" />
+        <h3 class="job-title">designer</h3>
+        <p class="p1-title">I believe in continous learning and adapting to new things to keep being relevant.</p>
+    </div>
+    <div class="project2">
+        <img src="images/shutterstock_376532611.jpg" alt="" class="img-1" />
+        <h3 class="job-title">Web Developer</h3>
+        <p class="p1-title">I believe in continous learning and adapting to new things to keep being relevant.</p>
+    </div>
+    </section>
+    <section class="contact" id="contactMe">
+        <h3 class="f-header">Contact Me</h3>
+        <div class="footer">
+            <h4 class="email">Send Email</h4>
+            <h4 class="phone">+250786461106</h4>
+            <!-- /* Social media */ -->
+            <a href="https://github.com/wakaflorien"><span class="iconify" data-icon="jam:github-circle" style="color: #f8f8f8; font-size: 43px;"></span></a>
+            <a href="https://twitter.com/urucabana_"><span class="iconify" data-icon="jam:twitter-circle" style="color: #f8f8f8; font-size: 43px;"></span></a>
+            <a href="https://www.linkedin.com/in/florien-niyongabo-7b7971142/"><span class="iconify" data-icon="jam:linkedin-circle" style="color: #f8f8f8; font-size: 43px;"></span></a>
+            <a href="https://www.facebook.com/florien.niyongabo"><span class="iconify" data-icon="jam:facebook-circle" style="color: #f8f8f8; font-size: 43px;"></span></a>
+            <a href="https://www.instagram.com/waka_florien45/"><span class="iconify" data-icon="ri:instagram-line" style="color: #f8f8f8; font-size: 43px;"></span></a>
+            <p class="copy">&copy; Copyright Florien Niyongabo</p>
+        </div>
+    </section>
+    <script>
+        function myFunction() {
+          var x = document.getElementById("mynav");
+          if (x.className === "navbar") {
+            x.className += " responsive";
+          } else {
+            x.className = "navbar";
+          }
+        }
+        </script>
+    <script src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>
 </body>
 </html>
