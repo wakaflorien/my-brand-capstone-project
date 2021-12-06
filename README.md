@@ -1,1 +1,1 @@
-# -my-brand-capstone-project
+# my-brand-capstone-project
