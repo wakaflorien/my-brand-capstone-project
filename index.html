@@ -8,8 +8,8 @@
     <title>Home</title>
 </head>
 <body>
-    <section class="navbar" id="mynav">
-        <a href="#mynav">Home</a>
+    <header class="navbar" id="mynav">
+        <a href="index.html">Home</a>
         <a href="#about">About me</a>
         <a href="#services">Services</a>
         <a href="#porti">Portifolio</a>
@@ -20,7 +20,7 @@
             <span class="iconify" data-icon="ci:menu-alt-02" style="color: #0FA958; font-size: 43px;"></span>
         </a>
             
-    </section>
+    </header>
     <section class="flex-intro" id="home">
         <div class="left" id="Home">
             <img src="images/me.jpg" max-width="100%" class="profile" alt="">
@@ -95,7 +95,7 @@
     </section>
     <section class="contact" id="contactMe">
         <h3 class="f-header">Contact Me</h3>
-        <div class="footer">
+        <footer class="footer">
             <h4 class="email">Send Email</h4>
             <h4 class="phone">+250786461106</h4>
             <!-- /* Social media */ -->
@@ -105,18 +105,9 @@
             <a href="https://www.facebook.com/florien.niyongabo"><span class="iconify" data-icon="jam:facebook-circle" style="color: #f8f8f8; font-size: 43px;"></span></a>
             <a href="https://www.instagram.com/waka_florien45/"><span class="iconify" data-icon="ri:instagram-line" style="color: #f8f8f8; font-size: 43px;"></span></a>
             <p class="copy">&copy; Copyright Florien Niyongabo</p>
-        </div>
+        </footer>
     </section>
-    <script>
-        function myFunction() {
-          var x = document.getElementById("mynav");
-          if (x.className === "navbar") {
-            x.className += " responsive";
-          } else {
-            x.className = "navbar";
-          }
-        }
-        </script>
+    <script src="/js/header.js"></script>
     <script src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>
 </body>
 </html>
