@@ -4,20 +4,57 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/main.css">
     <title>Blog</title>
 </head>
 <body>
-    <section class="form">
+    <header class="navbar" id="mynav">
+        <a href="../index.html">Home</a>
+        <a href="#about">About me</a>
+        <a href="#services">Services</a>
+        <a href="#porti">Portifolio</a>
+        <a href="/pages/blog.html">Blog</a>
+        <a href="#contactMe">Contact</a>
+        <a href="/pages/login.html">Login</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <span class="iconify" data-icon="ci:menu-alt-02" style="color: #0FA958; font-size: 43px;"></span>
+        </a>
+            
+    </header>
+    <form class="form">
+        <label for="Firstname"><b>Firstname</b></label>
+        <input type="text" name="fname" id="" placeholder="Enter your Firstname" required>
+
+        <label for="Lastname"><b>Lastname</b></label>
+        <input type="text" name="lname" id="" placeholder="Enter your Lastname" required>
+
         <label for="email"><b>Email</b></label>
         <input type="text" name="email" id="" placeholder="Enter your email" required>
 
-        <label for="password"></label>
+        <label for="password"><b>Password</b></label>
         <input type="password" name="passwd" id="" placeholder="Enter your password" required>
+
+        <label for="re-password"><b>Repeat Password</b></label>
+        <input type="password" name="passwd" id="" placeholder="Re-type your password" required>
         <button type="submit">Login</button>
-        <!-- <label>
+        <label>
             <input type="checkbox" name="remember" checked="checked" id="">
-        </label> -->
+        </label>
         <span class="no-account"><a href="login.html">Back to login</a></span>
-    </section>
+    </form>
+    <footer class="footer">
+        <h4 class="email">Send Email</h4>
+        <h4 class="phone">+250786461106</h4>
+        <!-- /* Social media */ -->
+        <a href="https://github.com/wakaflorien"><span class="iconify" data-icon="jam:github-circle" style="color: #f8f8f8; font-size: 43px;"></span></a>
+        <a href="https://twitter.com/urucabana_"><span class="iconify" data-icon="jam:twitter-circle" style="color: #f8f8f8; font-size: 43px;"></span></a>
+        <a href="https://www.linkedin.com/in/florien-niyongabo-7b7971142/"><span class="iconify" data-icon="jam:linkedin-circle" style="color: #f8f8f8; font-size: 43px;"></span></a>
+        <a href="https://www.facebook.com/florien.niyongabo"><span class="iconify" data-icon="jam:facebook-circle" style="color: #f8f8f8; font-size: 43px;"></span></a>
+        <a href="https://www.instagram.com/waka_florien45/"><span class="iconify" data-icon="ri:instagram-line" style="color: #f8f8f8; font-size: 43px;"></span></a>
+        <p class="copy">&copy; Copyright Florien Niyongabo</p>
+    </footer>
+    
+    <script src="/js/header.js"></script>
+    <script src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>
 </body>
 </html>
