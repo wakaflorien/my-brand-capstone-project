@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/main.css">
-    <title>Login</title>
+    <title>Blog</title>
 </head>
 <body>
     <header class="navbar" id="mynav">
@@ -21,18 +21,26 @@
         </a>
             
     </header>
-    <form class="form" onsubmit="return validateForm()" method="post">
+    <form class="form">
+        <label for="Firstname"><b>Firstname</b></label>
+        <input type="text" name="fname" id="" placeholder="Enter your Firstname" required>
+
+        <label for="Lastname"><b>Lastname</b></label>
+        <input type="text" name="lname" id="" placeholder="Enter your Lastname" required>
+
         <label for="email"><b>Email</b></label>
         <input type="text" name="email" id="" placeholder="Enter your email" required>
 
-        <label for="password"><b>Password<b></label>
+        <label for="password"><b>Password</b></label>
         <input type="password" name="passwd" id="" placeholder="Enter your password" required>
 
+        <label for="re-password"><b>Repeat Password</b></label>
+        <input type="password" name="passwd" id="" placeholder="Re-type your password" required>
         <button type="submit">Login</button>
         <label>
             <input type="checkbox" name="remember" checked="checked" id="">
         </label>
-        <span class="no-account"><a href="signup.html">Don't Have an account</a></span>
+        <span class="no-account"><a href="login.html">Back to login</a></span>
     </form>
     <footer class="footer">
         <h4 class="email">Send Email</h4>
@@ -47,7 +55,6 @@
     </footer>
     
     <script src="/js/header.js"></script>
-    <script src="/js/form.js"></script>
     <script src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>
 </body>
 </html>

@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/main.css">
-    <title>Login</title>
+    <title>Blog</title>
 </head>
 <body>
     <header class="navbar" id="mynav">
@@ -21,19 +21,37 @@
         </a>
             
     </header>
-    <form class="form" onsubmit="return validateForm()" method="post">
-        <label for="email"><b>Email</b></label>
-        <input type="text" name="email" id="" placeholder="Enter your email" required>
-
-        <label for="password"><b>Password<b></label>
-        <input type="password" name="passwd" id="" placeholder="Enter your password" required>
-
-        <button type="submit">Login</button>
-        <label>
-            <input type="checkbox" name="remember" checked="checked" id="">
-        </label>
-        <span class="no-account"><a href="signup.html">Don't Have an account</a></span>
-    </form>
+    <section class="blog">
+        <!-- <h6 class="reference">Blog/</h6> -->
+        <picture class="left-column">
+            <h6 class="reference"><a href="blog.html">Blog/</a></h6>
+            <h2 class="post-one-header">Climate Change</h2>
+            <img src="/images/computer.bmp" alt="" srcset="">
+            <button type="submit"><a href="singlepost-one.html">Read More ...</a></button>
+        </picture>
+        <div class="right-column">
+            <h2 class="post-one-header">December 6, 2021</h2>
+            <p class="post-one">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem minus debitis officiis, quia et delectus cumque deserunt suscipit, temporibus perspiciatis molestiae, voluptatum totam amet iste provident quod accusantium obcaecati hic!
+            </p>
+        </div>
+        
+    </section>
+    <hr>
+    <section class="blog">
+        <picture class="left-column">
+            <h2 class="post-one-header">Awareness about GBV</h2>
+            <img src="/images/computer.bmp" alt="" srcset="">
+            <button type="submit"><a href="singlepost-two.html">Read More ...</a></a></button>
+        </picture>
+        <div class="right-column">
+            <h2 class="post-one-header">December 6, 2021</h2>
+            <p class="post-one">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem minus debitis officiis, quia et delectus cumque deserunt suscipit, temporibus perspiciatis molestiae, voluptatum totam amet iste provident quod accusantium obcaecati hic!
+            </p>
+        </div>
+        
+    </section>
     <footer class="footer">
         <h4 class="email">Send Email</h4>
         <h4 class="phone">+250786461106</h4>
@@ -47,7 +65,6 @@
     </footer>
     
     <script src="/js/header.js"></script>
-    <script src="/js/form.js"></script>
     <script src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>
 </body>
 </html>
