@@ -483,52 +483,6 @@ button:hover {
 }
 
 /*#############################################Blog CSS#######################################################*/
-.blog{
-  display: flex;
-  flex-direction: row;
-  margin: 80px 50px 0 80px;
-  gap: 1em;
-  justify-content: center;
-  align-items: center;
-  margin-top: 200px;
-  padding-left: 100px;
-}
-img{
-  width: 50%;
-}
-.post-one-header{
-  font-size: 25px;
-  font-family: 'Kumbh Sans';
-  width: 100%;
-}
-.post-one{
-  font-size: 20px;
-  font-family: 'Kumbh Sans';
-}
-.right-column>h2{
-  color: var(--main-green);
-  text-transform: uppercase;
-  font-size: 20px;
-}
-hr{
-  border: 1px solid var(--main-green);
-}
-.left-column>button{
-  color: var(--main-green);
-  background-color: var(--white);
-}
-button>a{
-  text-decoration: none;
-  color: var(--main-green);
-}
-@media screen and(max-width: 600px) {
-  .blog{
-    flex-direction: column;
-  }
-  .left-column, .right-column{
-    width: 100%;
-  }
-}
 
 /*################################################Single Article##################################################*/
 .article-one{
@@ -570,5 +524,5 @@ button>a{
   padding-left: 0px;
 }
 form>button, textarea{
-  width: 50%;
+  width: 100%;
 }
