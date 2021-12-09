@@ -21,12 +21,14 @@
         </a>
             
     </header>
-    <form class="form">
+    <form class="form" id="form" name="form" onsubmit="return validateForm()">
         <label for="email"><b>Email</b></label>
-        <input type="text" name="email" id="email" placeholder="Enter your email" required>
+        <input type="text" name="email" id="email" placeholder="Enter your email">
+        <div id="email-msg"></div>
 
         <label for="password"><b>Password</b></label>
-        <input type="password" name="passwd" id="" placeholder="Enter your password" required>
+        <input type="password" name="passwd" id="passwd" placeholder="Enter your password">
+        <div id="passwd-msg"></div>
 
         <button type="submit">Login</button>
         <label>
@@ -48,7 +50,7 @@
     </footer>
     
     <script src="/js/header.js"></script>
-    <script src="/js/form.js"></script>
+    <script src="/js/form_validation.js"></script>
     <script src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>
 </body>
 </html>
