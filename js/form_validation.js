@@ -14,30 +14,13 @@ const lname_msg = document.getElementById("lname-msg");
 form.addEventListener('submit', e => {
     e.preventDefault();
 
-    checkNames();
     checkEmail();
     checkPassword();
+
+    checkNames();
     
 })
-function checkNames(){
-    if (fname.value == "" || lname.value == ""){
-        fname_msg.innerHTML = "Fill in your Firstname";
-        fname_msg.style.color = "#FF0000";
-        fname.style.borderColor = "#FF0000";
 
-        lname_msg.innerHTML = "Fill in your Firstname";
-        lname_msg.style.color = "#FF0000";
-        lname.style.borderColor = "#FF0000";
-
-        return false; 
-    } else{
-        fname_msg.innerHTML = "";
-        lname_msg.innerHTML = "";
-        fname.style.borderColor = "#0FA958";
-        lname.style.borderColor = "#0FA958";
-        return true;
-    }
-}
 function checkEmail(){
     if(email.value==""){
         email_msg.innerHTML = "Email can't be empty";
@@ -73,4 +56,23 @@ function checkPassword(){
         re_passwd.style.borderColor = "#0FA958";
         return true;
 }
+}
+function checkNames(){
+    if (fname.value == "" || lname.value == ""){
+        fname_msg.innerHTML = "Fill in your Firstname";
+        fname_msg.style.color = "#FF0000";
+        fname.style.borderColor = "#FF0000";
+
+        lname_msg.innerHTML = "Fill in your Firstname";
+        lname_msg.style.color = "#FF0000";
+        lname.style.borderColor = "#FF0000";
+
+        return false; 
+    } else{
+        fname_msg.innerHTML = "";
+        lname_msg.innerHTML = "";
+        fname.style.borderColor = "#0FA958";
+        lname.style.borderColor = "#0FA958";
+        return true;
+    }
 }
