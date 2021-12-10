@@ -63,7 +63,7 @@ function checkNames(){
         fname_msg.style.color = "#FF0000";
         fname.style.borderColor = "#FF0000";
 
-        lname_msg.innerHTML = "Fill in your Firstname";
+        lname_msg.innerHTML = "Fill in your Lastname";
         lname_msg.style.color = "#FF0000";
         lname.style.borderColor = "#FF0000";
 
