@@ -12,11 +12,16 @@ const lname = document.getElementById("lname");
 const lname_msg = document.getElementById("lname-msg");
 
 const reEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+const rePass = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{4,})");
+const re_rePass = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{4,})");
 
 form.addEventListener('submit', e => {
     e.preventDefault();
-
+    // console.log("form")
     checkEmail();
+
+    checkLoginPassword();
+
     checkPassword();
 
     checkNames();
@@ -28,6 +33,7 @@ function checkEmail(){
         email_msg.innerHTML = "Email can't be empty";
         email_msg.style.color = "#FF0000";
         email.style.borderColor = "#FF0000";
+
         return false;
     } else if(reEmail.test(email.value) == false){
         email_msg.innerHTML = "Enter Correct email";
@@ -41,23 +47,59 @@ function checkEmail(){
         return true;
     }
 }
-function checkPassword(){
+function checkLoginPassword(){
     if(passwd.value == ""){
+        passwd_msg.innerHTML = "Password can not be empty";
+        passwd_msg.style.color = "#FF0000";
+        passwd.style.borderColor = "FF0000";
+
+        return false;
+    } else if(rePass.test(passwd.value) == false){
+        passwd_msg.innerHTML = "Enter Strong Password";
+        passwd_msg.style.color = "#FF0000";
+        passwd.style.borderColor = "FF0000";
+
+        re_passwd_msg.innerHTML = "Enter Strong Password";
+        re_passwd_msg.style.color = "#FF0000";
+        re_passwd.style.borderColor = "#FF0000";
+
+
+        return false;
+    }
+     else{
+        passwd_msg.innerHTML = "";
+        passwd.style.borderColor = "#0FA958";
+    }
+}
+function checkPassword(){
+    if(passwd.value == "" || re_passwd.value == ""){
         passwd_msg.innerHTML = "Password can't be empty";
         passwd_msg.style.color = "#FF0000";
         passwd.style.borderColor = "#FF0000";
 
-        return false;
-    } else if (re_passwd.value == ""){
         re_passwd_msg.innerHTML = "Password can't be empty";
         re_passwd_msg.style.color = "#FF0000";
         re_passwd.style.borderColor = "#FF0000";
 
         return false;
-    }
+    } 
     else if(passwd.value !== re_passwd.value){
         passwd_msg.innerHTML = "Passwords must match";
         re_passwd_msg.innerHTML = "Passwords must match";
+
+        return false;
+
+    } else if(rePass.test(passwd.value) == false || re_rePass.test(re_passwd.value) == false){
+        passwd_msg.innerHTML = "Enter Strong Password";
+        passwd_msg.style.color = "#FF0000";
+        passwd.style.borderColor = "FF0000";
+
+
+        re_passwd.innerHTML = "Enter Strong Password";
+        re_passwd_msg.style.color = "#FF0000";
+        re_passwd.style.borderColor = "FF0000";
+
+
         return false;
     }
     else{
@@ -65,6 +107,7 @@ function checkPassword(){
         re_passwd_msg.innerHTML = "";
         passwd.style.borderColor = "#0FA958";
         re_passwd.style.borderColor = "#0FA958";
+
         return true;
 }
 }
