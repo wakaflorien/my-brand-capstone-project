@@ -21,21 +21,26 @@
         </a>
             
     </header>
-    <form class="form">
+    <form class="form" id="form" name="form" onsubmit="return validateForm()">
         <label for="Firstname"><b>Firstname</b></label>
-        <input type="text" name="fname" id="" placeholder="Enter your Firstname" required>
+        <input type="text" name="fname" id="fname" placeholder="Enter your Firstname">
+        <div id="fname-msg"></div>
 
         <label for="Lastname"><b>Lastname</b></label>
-        <input type="text" name="lname" id="" placeholder="Enter your Lastname" required>
+        <input type="text" name="lname" id="lname" placeholder="Enter your Lastname">
+        <div id="lname-msg"></div>
 
         <label for="email"><b>Email</b></label>
-        <input type="text" name="email" id="" placeholder="Enter your email" required>
+        <input type="text" name="email" id="email" placeholder="Enter your email">
+        <div id="email-msg"></div>
 
         <label for="password"><b>Password</b></label>
-        <input type="password" name="passwd" id="" placeholder="Enter your password" required>
+        <input type="password" name="passwd" id="passwd" placeholder="Enter your password">
+        <div id="passwd-msg"></div>
 
         <label for="re-password"><b>Repeat Password</b></label>
-        <input type="password" name="passwd" id="" placeholder="Re-type your password" required>
+        <input type="password" name="passwd" id="re-passwd" placeholder="Re-type your password">
+        <div id="re-passwd-msg"></div>
         <button type="submit">Signup</button>
         <label>
             <input type="checkbox" name="remember" checked="checked" id="">
@@ -55,6 +60,7 @@
         <p class="copy">&copy; Copyright Florien Niyongabo</p>
     </footer>
     
+    <script src="/js/form_validation.js"></script>
     <script src="/js/header.js"></script>
     <script src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>
 </body>
