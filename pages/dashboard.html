@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+
+    <title>Upload Post</title>
+</head>
+
+<body>
+    <header class="navbar" id="mynav">
+        <a href="../index.html">Home</a>
+        <a href="#about">About me</a>
+        <a href="#services">Services</a>
+        <a href="#porti">Portifolio</a>
+        <a href="/pages/blog.html">Blog</a>
+        <a href="#contactMe">Contact</a>
+        <a href="/pages/login.html">Logout</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <span class="iconify" data-icon="ci:menu-alt-02" style="color: #0FA958; font-size: 43px;"></span>
+        </a>
+
+    </header>
+    <main>
+    <h6 class="reference"><a href="blog.html">Blog/</a><span class="inner">Upload Post</span></h6>
+    <form class="form" id="form" name="form">
+        <h2 class="dash-header">Upload Articles Here!</h2>
+        <label for="post-header">Post Title</label>
+        <input type="text" name="post-title"  id="post_title">
+        <label for="comments">Post Text</label>
+        <textarea name="comments" id="post_text" cols="100" rows="10"></textarea>
+        <div id="comment_msg"></div>
+
+        <label for="image"></label>
+        <input type="file" id="img" name="img" accept="image/*">
+
+        <button type="submit">Upload</button>
+    </form>
+    </main>
+
+    <footer class="footer">
+        <h4 class="email">Send Email</h4>
+        <h4 class="phone">+250786461106</h4>
+        <!-- /* Social media */ -->
+        <a href="https://github.com/wakaflorien"><span class="iconify" data-icon="jam:github-circle"
+                style="color: #f8f8f8; font-size: 43px;"></span></a>
+        <a href="https://twitter.com/urucabana_"><span class="iconify" data-icon="jam:twitter-circle"
+                style="color: #f8f8f8; font-size: 43px;"></span></a>
+        <a href="https://www.linkedin.com/in/florien-niyongabo-7b7971142/"><span class="iconify"
+                data-icon="jam:linkedin-circle" style="color: #f8f8f8; font-size: 43px;"></span></a>
+        <a href="https://www.facebook.com/florien.niyongabo"><span class="iconify" data-icon="jam:facebook-circle"
+                style="color: #f8f8f8; font-size: 43px;"></span></a>
+        <a href="https://www.instagram.com/waka_florien45/"><span class="iconify" data-icon="ri:instagram-line"
+                style="color: #f8f8f8; font-size: 43px;"></span></a>
+        <p class="copy">&copy; Copyright Florien Niyongabo</p>
+    </footer>
+
+
+    <script defer src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <!-- <script defer src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script> -->
+    <script defer src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+    <script defer src="/js/firebase.js"></script>
+    <script defer src="/js/main.js"></script>
+
+    <script src="/js/header.js"></script>
+    <!-- <script src="/js/comments.js"></script> -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>
+    
+    <script src="https://cdn.ckeditor.com/4.13.0/standard/ckeditor.js"></script>
+    <script>
+        CKEDITOR.replace( 'post_text' );
+    </script>
+</body>
+
+</html>
