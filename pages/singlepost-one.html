@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="../css/main.css">
     <title>Single post</title>
 </head>
 <body>
@@ -41,10 +41,11 @@
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus impedit sequi velit deleniti hic? Consequuntur, est. Nulla dolor esse voluptate, perspiciatis in molestiae iusto officia architecto atque commodi. Dignissimos, assumenda.
             </p>
                 
-            <form action="" class="comment">
-                <h2> Comment Down here!</h2>
-                <!-- <label for="comments"><b>Comments</b></label> -->
-                <textarea name="comments" id="" cols="100" rows="10"></textarea>
+            <form action="" class="comment" id="comments">
+                <!-- <h2> Comment Down here!</h2> -->
+                <label for="comments"><b>Leave your comments below !</b></label>
+                <textarea name="comments" id="comment_text" cols="100" rows="10"></textarea>
+                <div id="comment_msg"></div>
                 <button type="submit">Comment</button>
             </form>
             <h2>Latest Comments</h2>
@@ -67,6 +68,7 @@
     </footer>
     
     <script src="/js/header.js"></script>
+    <script src="/js/comments.js"></script>
     <script src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>
 </body>
 </html>
