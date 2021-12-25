@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/single.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <title>Single post</title>
 </head>
 <body>
@@ -20,9 +22,9 @@
             <span class="iconify" data-icon="ci:menu-alt-02" style="color: #0FA958; font-size: 43px;"></span>
         </a>
     </header>
-    <main>
-        <article class="article-one">
-            <h6 class="reference"><a href="blog.html">Blog/</a><span class="inner">Post One</span></h6>
+    <main id="main">
+        <article class="article-one" id="article">
+            <!-- <h6 class="reference"><a href="blog.html">Blog/</a><span class="inner">Post One</span></h6>
             <h2 class="article-one-header">On DECEMBER 6, 2021</h2>
             <h1>Awareness about GBV</h1>
             <img src="/images/g.jfif" alt="">
@@ -34,15 +36,10 @@
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum culpa placeat saepe inventore nobis modi nemo, veritatis sapiente voluptatem reiciendis consequuntur minima voluptatum et aut iure nihil illo aliquid rem.
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas minus totam deleniti? Enim, at minima asperiores repudiandae porro atque quaerat illo, voluptates magni aut molestias eius autem! Necessitatibus, doloremque assumenda.
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam quo omnis nemo reprehenderit, earum sunt provident vitae numquam dolores autem vero a error quaerat dolor incidunt. Nam expedita quasi voluptate.
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Recusandae in repellat nulla blanditiis, voluptates saepe asperiores reprehenderit veritatis doloremque nobis labore! Tenetur ullam, vero quisquam earum expedita ducimus a repellat!
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi quos nulla illo corrupti consequuntur id temporibus quibusdam doloremque, iusto distinctio, mollitia deleniti nam corporis. Ducimus similique amet distinctio! Natus, earum!
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Est eligendi in repudiandae possimus provident ipsam error nam porro. Itaque facilis voluptates commodi vitae minima! Esse odit reprehenderit nesciunt consectetur dolore.
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab libero illum, necessitatibus accusamus corrupti dignissimos quasi perferendis in saepe similique reiciendis tenetur voluptatum ipsa. Atque suscipit harum enim veniam voluptate?
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus impedit sequi velit deleniti hic? Consequuntur, est. Nulla dolor esse voluptate, perspiciatis in molestiae iusto officia architecto atque commodi. Dignissimos, assumenda.
-            </p>
-                
-            <form action="" class="comment" id="comments">
-                <!-- <h2> Comment Down here!</h2> -->
+            </p> -->
+        </article>
+        <div id="comments_section">
+            <!-- <form action="" class="comment" id="comments">
                 <label for="comments"><b>Leave your comments below !</b></label>
                 <textarea name="comments" id="comment_text" cols="100" rows="10"></textarea>
                 <div id="comment_msg"></div>
@@ -52,8 +49,8 @@
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic error voluptates consectetur, debitis explicabo nulla tempora, maxime odio quod dolore est officia ipsa provident ipsam at aperiam quis molestias asperiores.</p>
             <h3 class="time-stamp">2h ago by, <span class="commantetor">Mr John</span></h3>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic error voluptates consectetur, debitis explicabo nulla tempora, maxime odio quod dolore est officia ipsa provident ipsam at aperiam quis molestias asperiores.</p>
-            <h3 class="time-stamp">2h ago by, <span class="commantetor">Mr John</span></h3>
-        </article>
+            <h3 class="time-stamp">2h ago by, <span class="commantetor">Mr John</span></h3> -->
+        </div>
     </main>
     <footer class="footer">
         <h4 class="email">Send Email</h4>
@@ -67,8 +64,17 @@
         <p class="copy">&copy; Copyright Florien Niyongabo</p>
     </footer>
     
+    <script defer src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+    <script defer src="/js/firebase.js"></script>
+    <script defer src="/js/singlepost-one.js"></script>
+    <script defer src="/js/main.js"></script>
+
     <script src="/js/header.js"></script>
-    <script src="/js/comments.js"></script>
+    <!-- <script src="/js/comments.js"></script> -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>
 </body>
 </html>

@@ -23,7 +23,7 @@
         </a>
 
     </header>
-    <form class="form" id="form" name="form">
+    <form class="form" id="loginForm" name="form">
         <label for="email"><b>Email</b></label>
         <input type="text" name="email" id="email" placeholder="Enter your email">
         <div id="email-msg"></div>
@@ -56,8 +56,15 @@
         <p class="copy">&copy; Copyright Florien Niyongabo</p>
     </footer>
 
+    <script defer src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+    <script defer src="/js/firebase.js"></script>
+    <script defer src="/js/login.js"></script>
+
+    <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script> -->
     <script src="/js/header.js"></script>
-    <script src="/js/form_validation.js"></script>
     <script src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>
 </body>
 

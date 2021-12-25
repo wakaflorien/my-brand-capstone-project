@@ -50,6 +50,7 @@
     }
     .navbar .icon{
       display: none;
+      cursor: pointer;
     }
     .flex-intro{
       display: flex;
@@ -245,12 +246,10 @@
         padding: 0;
       }
       .navbar{
-        width: 50%;
+        width: 100%;
         /* background-color: var(--black); */
-        float: left;
-        position: absolute;
-        left: 0;
-        top: 0;
+        margin-top: -60px;
+        margin-left: -30px;
         font-size: 15px;
         padding: 0;
         
@@ -258,6 +257,7 @@
       .navbar a{
         font-size: 15px;
         padding-left: 10px;
+        padding-bottom: 10px;
       }
       .navbar a:not(:first-child) {display: none;}
       section:where(.navbar:first-child) {font-size: 15px;}
@@ -271,11 +271,19 @@
     .navbar.responsive {
       width: 100%;
       height: 50%;
+      margin-top: -60px;
       margin-left: -30px;
-      position: absolute;
-      transition: 0.3s;
+      /* transition: 0.3s; */
       background-color: rgba(0,0,0,0.9);
       z-index: 2;
+
+      animation-name: example;
+      animation-duration: 0.2s;  
+      animation-fill-mode: forwards;
+    }
+    @keyframes example {
+      from {margin-left: -40px;}
+      to {margin-left: -30px; }
     }
     .navbar.responsive .icon{
       position: absolute;
@@ -322,9 +330,12 @@
     .p1-title{
       margin-top: 50px;
     }
+    .project1, .project2{
+      background-color: navy;
+      /* width: 100%; */
+    }
     .img-1{
       width: 100%;
-      margin-left: 100px;
     }
     .job-title, .p1-title{
       position: absolute;
@@ -346,6 +357,7 @@
     }
     .left{
       padding-bottom: 0px;
+      width: 100%;
     }
     .p-desc{
       text-align: center;
@@ -378,6 +390,9 @@
       .profile{
         width: 100%;
         height: 100%;
+      }
+      .img-1{
+        width: 100%;
       }
       .name, h3{
         font-size: 20px;
@@ -442,6 +457,17 @@ input[type=text], input[type=password] {
   padding: 500px;
   padding-top: 300px;
 }
+.delete{
+  /* background-color: var(--main-green); */
+  color: var(--white);
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 20% !important;
+  font-size: 20px;
+  font-weight: 500;
+}
 /* Set a style for all buttons */
 button {
   background-color: var(--main-green);
@@ -454,8 +480,10 @@ button {
   font-size: 20px;
   font-weight: 500;
 }
+
 button:hover {
   opacity: 0.8;
+  color: var(--main-green);
 }
 @media screen and (max-width: 600px) {
   span.psw {
@@ -483,7 +511,7 @@ button:hover {
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding-top: 200px;
+  padding-top: 100px;
   padding: 200px;
   padding-bottom: 0px;
   
@@ -502,12 +530,9 @@ button:hover {
 }
 .read-more{
   background-color: var(--white);
+  color: var(--black);
   width: 100%;
   text-align: left;
-}
-.read-more>a{
-  color: var(--main-green);
-  text-decoration: none;
 }
 .date{
   text-transform: uppercase;
@@ -617,6 +642,9 @@ main{
   text-decoration: none;
   color: var(--black);
 }
+main>h6{
+  padding-top: 100px;
+}
 @media screen and(max-width: 600px) {
   .article-one{
     padding: 0px;
@@ -637,4 +665,83 @@ main{
 form>button, textarea{
   width: 100%;
 }
-/*######################################### Validation CSS ########################################*/
+/*######################################### Dashboard CSS ########################################*/
+
+#dash, #dash1, #dash2{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  gap: 5em;
+  
+  margin-bottom: -200px;
+}
+.side_panel{
+  background-color: var(--main-green);
+  height:1000px;
+  width: 200px;
+  margin-top: 0px;
+}
+.postForm{
+  width: 60%;
+  float: left;
+  font-size: 25px;
+  padding-bottom: 10px;
+}
+.quick{
+  list-style-type: none;
+  color: var(--white);
+  font-size: 20px;
+  padding-left: 0;
+  margin-top: 150px;
+}
+li>a{
+  text-decoration: none;
+  color: var(--black);
+}
+li>a:hover{
+  color: var(--light-graye);
+}
+.link1, .link2, .link3{
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.link2{
+  background-color: var(--white);
+  color: var(--black) !important;
+}
+.link2:hover{
+  color: inherit !important;
+}
+.delete{
+  background-color: var(--white);
+  color: var(--black);
+  font-size: 15px;
+}
+
+.delete:hover{
+  color: var(--main-green);
+}
+table {
+  font-family: "Kumbh Sans";
+  border-collapse: collapse;
+  width: 60%;
+  margin-top: -230px;
+  margin-left: -250px;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+  text-align: center;
+}
+
+tr:nth-child(even) {
+  background-color: var(--white);
+}
+.hea{
+  margin-top: -500px;
+  margin-bottom: 10px;
+}
