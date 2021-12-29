@@ -673,7 +673,7 @@ form>button, textarea{
   align-items: center;
   padding-top: 0px;
   padding-bottom: 0px;
-  gap: 5em;
+  gap: 3em;
   
   margin-bottom: -200px;
 }
@@ -698,7 +698,7 @@ form>button, textarea{
 }
 li>a{
   text-decoration: none;
-  color: var(--black);
+  color: var(--white);
 }
 li>a:hover{
   color: var(--light-graye);
@@ -713,35 +713,4 @@ li>a:hover{
 }
 .link2:hover{
   color: inherit !important;
-}
-.delete{
-  background-color: var(--white);
-  color: var(--black);
-  font-size: 15px;
-}
-
-.delete:hover{
-  color: var(--main-green);
-}
-table {
-  font-family: "Kumbh Sans";
-  border-collapse: collapse;
-  width: 60%;
-  margin-top: -230px;
-  margin-left: -250px;
-}
-
-td, th {
-  border: 1px solid #dddddd;
-  text-align: left;
-  padding: 8px;
-  text-align: center;
-}
-
-tr:nth-child(even) {
-  background-color: var(--white);
-}
-.hea{
-  margin-top: -500px;
-  margin-bottom: 10px;
 }

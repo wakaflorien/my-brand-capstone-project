@@ -6,60 +6,46 @@ window.onload = function (){
     
         if(user){
             console.log(user.uid)
+            // let currentUser = user.uid
             console.log(user.email)
         }
-    })
 
-    this.getArticles(user.uid);
+    this.getArticles(user);
+    })
+    updateForm()
 }
 
 let main = document.getElementById("dash1");
-
-if (main){
-    function table(doc){
-        let key = doc.key
-        let tbody = document.getElementById("tbody")
-        let tr = document.createElement("tr")
-        let td1 = document.createElement("td")
-        let td2 = document.createElement("td")
-        let td3 = document.createElement("td")
-        let td4 = document.createElement("td")
-        let td5 = document.createElement("td")
-
-        td1.innerHTML = doc.val().post_title;
-        td2.innerHTML = doc.val().post_body;
-        td3.innerHTML = doc.val().published;
-        td4.innerHTML = "<button class='delete' id= '"+ key +"' onclick='delete_post(this.id)'>Delete</button>"
-        td5.innerHTML = "<button class='delete' id= '"+ key +"' onclick='update_post(this.id)'> Update</button>"
-
-        tr.appendChild(td1)
-        tr.appendChild(td2)
-        tr.appendChild(td3)
-        tr.appendChild(td4)
-        tr.appendChild(td5)
-        
-        tbody.appendChild(tr)
-        
-        console.log(tbody)
-    }
+let grid = document.getElementById("grid-container")
     
-    function getArticles(uid){
-        db.ref("Blogs/" + uid).limitToLast(10).once("value", function (snapshot){
+    function getArticles(user){
+        db.ref("Blogs/").limitToLast(10).once("value", function (snapshot){
             
             snapshot.forEach(
                 function (childSnapshot){
     
                     let key = childSnapshot.key
-                    console.log(childSnapshot.val())
-                    // table(childSnapshot, key);
+                    let articles = childSnapshot.val()
+                    console.log(key);
+                    let tableBody = `  
+                        <div>${articles.post_title}</div>
+                        <div>${articles.post_body}</div>
+                        <div>${articles.published}</div>
+                        <div>
+                        <button class="delete" id="${key}" onClick="delete_post(this.id)">Delete</button>
+                        <button class="update" id="${key}" onClick="openFormModal(this.id)">Update</button></div>`;
+                        
+                    console.log(tableBody)
+                    grid.innerHTML += tableBody
                 }
             )
         })
     }
-}
 
-function delete_post(key) {
+const delete_post = (key) => {
+    // console.log(key)
     db.ref("Blogs/" + key).remove();
+    // db.ref("comments/" + key).remove();
 
     Toastify({
         text: "Post Successfully Deleted!",
@@ -68,6 +54,58 @@ function delete_post(key) {
           background: "linear-gradient(to center, #0FA958, #0FA958)",
         }
       }).showToast();
+  }
+    // Get the Form modal
+    let formModal = document.getElementById("form-container");
+    let form = document.getElementById("postForm");
+    let postTitle = document.getElementById("post_title")
+    let postText = document.getElementById("post_text")
+    let postImage = document.getElementById("img")
+    let updateButton = document.getElementById("update");
+    // Get the button that opens the Form modal
+    const openFormModal = (key) =>{
 
-      getArticles();
+    formModal.style.display = "block";
+    // console.log("record To update",key)
+    // let postTitle = 
+    }
+
+    // Get the <span> element that closes the Form modal
+    let span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+    formModal.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+    if (event.target == formModal) {
+        formModal.style.display = "none";
+    }
+    }
+    function updateForm(){
+        db.ref("Blogs/" + key).limitToLast(10).once("value", function (snapshot){
+            
+            snapshot.forEach(
+                function (childSnapshot){
+    
+                    let key = childSnapshot.key
+                    let articles = childSnapshot.val()
+                    postTitle.value = articles.post_title
+                    postText.value = articles.post_body
+                    postImage.src = articles.photoURL
+                }
+            )
+        })
+    }
+  const update_post = (key) => {
+      let postTitle 
+    const newData = {
+        post_title: postTitle,
+        post_body: postText,
+        photoURL: downloadURL,
+        published: firebase.database.ServerValue.TIMESTAMP
+    }
+    db.ref("Blogs/" + key).update(newData);
   }

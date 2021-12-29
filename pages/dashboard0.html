@@ -6,7 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/main.css">
-
+    <link rel="stylesheet" href="../css/dash0.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <title>Upload Post</title>
 </head>
 
@@ -31,21 +32,34 @@
         <ul class="quick">
             <li class="link1"><a href="./dashboard0.html">Your Articles</a></li>
             <li class="link2"><a href="./dashboard.html">Create an Article</a></li>
-            <li class="link3"><a href="./dashboard1.html">Manage your Articles</a></li>
+            <li class="link3"><a href="./dashboard1.html">List of Queries</a></li>
         </ul>
     </div>
-    <h2 class="hea">Articles</h2><br>
-    <table>
-        <thead>
-            <tr>
-                <th>Title</th>
-                <th>Content</th>
-                <th>Date published</th>
-                <th colspan="2">Action</th>
-            </tr>
-        </thead>
-        <tbody id="tbody"></tbody>
-    </table>
+    <div id="grid-container">
+        <div>Title</div>
+        <div>Body</div>
+        <div>Published</div>  
+        <div>Action</div>
+    </div>
+    <div class="form-container" id="form-container">
+        <form class="postForm" id="postForm" name="postForm">
+            <div class="form-header">
+                <span class="close">&times;</span>
+                <h2 class="dash-header">Update Your Article</h2>
+            <div>
+            <div id="form-body"><label for="post-header">Post Title</label>
+                <input type="text" name="post-title"  id="post_title">
+                <label for="comments">Post Text</label>
+                <textarea name="comments" id="post_text" cols="100" rows="10"></textarea>
+                <div id="comment_msg"></div>
+        
+                <label for="image"></label>
+                <input type="file" id="img" name="img" accept="image/*">
+        
+                <button type="submit" id="update">Update</button>
+            </div>
+        </form>
+    </div>
     </main>
 
     <footer class="footer">
