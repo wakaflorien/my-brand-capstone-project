@@ -26,7 +26,7 @@ function logout(){
           });
 }
 firebase.auth().onAuthStateChanged( user => {
-    console.log("Status Changed", user);
+    // console.log("Status Changed", user);
     if(!user){
         location.href = '../index.html'
     }
