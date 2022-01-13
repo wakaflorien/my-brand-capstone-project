@@ -1,15 +1,3 @@
-// function update_post(){
-//     const newData = {
-//         post_title: postTitle,
-//         post_body: postText,
-//         photoURL: downloadURL,
-//         published: firebase.database.ServerValue.TIMESTAMP
-//     }
-//     db.ref("Blogs/" + id.value).update(newData);
-// }
-
-
-
 // ////////////////// Logout ///////////////////////
 
 function logout(){
