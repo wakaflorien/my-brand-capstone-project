@@ -6,7 +6,6 @@ window.onload = function (){
     
         if(user){
             console.log(user.uid)
-            // let currentUser = user.uid
             console.log(user.email)
         }
 
@@ -43,9 +42,7 @@ let grid = document.getElementById("grid-container")
     }
 
 const delete_post = (key) => {
-    // console.log(key)
     db.ref("Blogs/" + key).remove();
-    // db.ref("comments/" + key).remove();
 
     Toastify({
         text: "Post Successfully Deleted!",
@@ -66,11 +63,8 @@ const delete_post = (key) => {
     const openFormModal = (key) =>{
 
     formModal.style.display = "block";
-    // console.log("record To update",key)
-    // let postTitle = 
     }
 
-    // Get the <span> element that closes the Form modal
     let span = document.getElementsByClassName("close")[0];
 
     // When the user clicks on <span> (x), close the modal
