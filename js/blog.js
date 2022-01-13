@@ -1,13 +1,13 @@
 console.log("Running")
 
-window.onload = function (){
+window.onload = function () {
     let main = document.getElementById("main");
-    
-    db.ref("Blogs/").limitToLast(10).once("value", function (snapshot){
-    
+
+    db.ref("Blogs/").limitToLast(10).once("value", function (snapshot) {
+
         snapshot.forEach(
-            function (childSnapshot){
-    
+            function (childSnapshot) {
+
                 // console.log(childSnapshot.val())
                 let articles = childSnapshot.val()
                 let article = `
@@ -24,8 +24,8 @@ window.onload = function (){
                     </section>
                 </article>`;
 
-            // console.log(article)
-            main.innerHTML += article
+                // console.log(article)
+                main.innerHTML += article
             }
         )
     })
