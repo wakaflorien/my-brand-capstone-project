@@ -1,4 +1,4 @@
-const form = document.getElementById("form");
+const validateForm = document.getElementById("signupForm");
 const email = document.getElementById("email");
 const password = document.getElementById("passwd");
 const email_msg = document.getElementById("email-msg");
@@ -11,22 +11,25 @@ const fname_msg = document.getElementById("fname-msg");
 const lname = document.getElementById("lname");
 const lname_msg = document.getElementById("lname-msg");
 
+
 const reEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 const rePass = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{4,})");
 const re_rePass = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{4,})");
 
-form.addEventListener('submit', e => {
-    e.preventDefault();
-    // console.log("form")
-    checkEmail();
-
-    checkLoginPassword();
-
-    checkPassword();
-
-    checkNames();
+if(validateForm){
+    validateForm.addEventListener('submit', e => {
+        e.preventDefault();
+        // console.log("form")
+        checkEmail();
     
-})
+        checkLoginPassword();
+    
+        checkPassword();
+    
+        checkNames();
+        
+    })
+}
 
 function checkEmail(){
     if(email.value==""){

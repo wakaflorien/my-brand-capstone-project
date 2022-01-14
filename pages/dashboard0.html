@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/dash0.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
-
     <title>Upload Post</title>
 </head>
 
@@ -25,9 +25,9 @@
         </a>
             
     </header>
-    <main id="dash">
+    <main id="dash1">
     <!-- <h6 class="reference"><a href="blog.html">Blog/</a><span class="inner">Upload Post</span></h6> -->
-    <div class="side_panel">
+    <div class="side_panel" id="side_panel">
         <h2 class="quick_links">DashBoard</h2>
         <ul class="quick">
             <li class="link1"><a href="./dashboard0.html">Your Articles</a></li>
@@ -35,19 +35,31 @@
             <li class="link3"><a href="./dashboard1.html">List of Queries</a></li>
         </ul>
     </div>
-    <form class="postForm" id="postForm" name="postForm">
-        <h2 class="dash-header">Upload Articles Here!</h2>
-        <label for="post-header">Post Title</label>
-        <input type="text" name="post-title"  id="post_title">
-        <label for="comments">Post Text</label>
-        <textarea name="comments" id="post_text" cols="100" rows="10"></textarea>
-        <div id="comment_msg"></div>
-
-        <label for="image"></label>
-        <input type="file" id="img" name="img" accept="image/*">
-
-        <button type="submit">Upload</button>
-    </form>
+    <div id="grid-container">
+        <div>Title</div>
+        <div>Body</div>
+        <div>Published</div>  
+        <div>Action</div>
+    </div>
+    <div class="form-container" id="form-container">
+        <form class="postForm" id="postForm" name="postForm">
+            <div class="form-header">
+                <span class="close">&times;</span>
+                <h2 class="dash-header">Update Your Article</h2>
+            <div>
+            <div id="form-body"><label for="post-header">Post Title</label>
+                <input type="text" name="post-title"  id="post_title">
+                <label for="comments">Post Text</label>
+                <textarea name="comments" id="post_text" cols="100" rows="10"></textarea>
+                <div id="comment_msg"></div>
+        
+                <label for="image"></label>
+                <input type="file" id="img" name="img" accept="image/*">
+        
+                <button type="submit" id="update">Update</button>
+            </div>
+        </form>
+    </div>
     </main>
 
     <footer class="footer">
@@ -73,18 +85,13 @@
     <script defer src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
     <script defer src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
     <script defer src="/js/firebase.js"></script>
-    <script defer src="/js/dashboard.js"></script>
+    <script defer src="/js/dashboard0.js"></script>
     <script defer src="/js/main.js"></script>
 
     <script src="/js/header.js"></script>
     <!-- <script src="/js/comments.js"></script> -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>
-    
-    <script src="https://cdn.ckeditor.com/4.13.0/standard/ckeditor.js"></script>
-    <script>
-        CKEDITOR.replace( 'post_text' );
-    </script>
 </body>
 
 </html>

@@ -1,0 +1,11 @@
+#article{
+    margin-bottom: -400px;
+}
+#comments_section{
+    /* margin-top: 200px; */
+    padding: 200px;
+    padding-bottom: -200px !important;
+}
+.commentClass{
+    font-weight: normal;
+}
