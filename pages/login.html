@@ -11,19 +11,19 @@
 
 <body>
     <header class="navbar" id="mynav">
-        <a href="../index.html">Home</a>
-        <a href="#about">About me</a>
-        <a href="#services">Services</a>
-        <a href="#porti">Portifolio</a>
-        <a href="/pages/blog.html">Blog</a>
-        <a href="#contactMe">Contact</a>
-        <a href="/pages/login.html">Login</a>
+        <a href="../">Home</a>
+        <a href="../">About me</a>
+        <a href="../">Services</a>
+        <a href="../">Portifolio</a>
+        <a href="./blog.html">Blog</a>
+        <a href="#">Contact</a>
+        <a href="./login.html">Login</a>
         <a href="javascript:void(0);" class="icon" onclick="myFunction()">
             <span class="iconify" data-icon="ci:menu-alt-02" style="color: #0FA958; font-size: 43px;"></span>
         </a>
-
+            
     </header>
-    <form class="form" id="form" name="form">
+    <form class="form" id="loginForm" name="form">
         <label for="email"><b>Email</b></label>
         <input type="text" name="email" id="email" placeholder="Enter your email">
         <div id="email-msg"></div>
@@ -56,8 +56,15 @@
         <p class="copy">&copy; Copyright Florien Niyongabo</p>
     </footer>
 
+    <script defer src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+    <script defer src="/js/firebase.js"></script>
+    <script defer src="/js/login.js"></script>
+
+    <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script> -->
     <script src="/js/header.js"></script>
-    <script src="/js/form_validation.js"></script>
     <script src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>
 </body>
 
