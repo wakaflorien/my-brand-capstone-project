@@ -45,7 +45,7 @@ firebase.auth().onAuthStateChanged(user => {
                 <textarea name="comments" id="comment_text" cols="100" rows="10"></textarea>
                 <button type="submit">Comment</button>
             </form>
-
+            {"message":"Logged in ","token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySW5mbyI6eyJpZCI6IjYxZTNlNzVmZTgxNjAzMGNjMjY0NzAwNiIsImVtYWlsIjoid2FrYS5mbG9yaWVuNDVAZ21haWwuY29tIiwicm9sZXMiOlsxOTk4LDUxNTBdfSwiaWF0IjoxNjQzNTUxODY0LCJleHAiOjE2NDM1NTU0NjR9.SvnuQLUYW3wZFZJUoE3z0HujNtbJye6TS_xm8Ped9K4"}
             <h2>Latest Comments</h2>
         `;
         commentSection.innerHTML += comment

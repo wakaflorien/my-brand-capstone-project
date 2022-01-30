@@ -485,7 +485,6 @@ button {
 
 button:hover {
   opacity: 0.8;
-  color: var(--main-green);
 }
 @media screen and (max-width: 600px) {
   span.psw {
