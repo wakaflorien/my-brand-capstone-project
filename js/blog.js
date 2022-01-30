@@ -17,8 +17,8 @@ fetch('https://my-capstone-project-api.herokuapp.com/posts/')
                         <img src="${post.imageUrl}" alt="First img" class="pic-one">
                     </figure>
                     <section class="post-one-p">
-                        <p id="p" class="p">${post.postBody+post._id}</p>
-                        <button class="read-more" onClick="readMore(1)" id="${post._id}">Read More</button>
+                        <p id="p" class="p">${post.postBody}</p>
+                        <button class="read-more" onClick="readMore(${post._id})" id="${post._id}">Read More</button>
                     </section>
                 </article>`;
 
