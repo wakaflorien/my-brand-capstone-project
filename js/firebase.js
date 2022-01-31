@@ -1,5 +1,3 @@
-console.log("Initializing firebase");
-
 // Your web app's Firebase configuration
 const firebaseConfig = {
     apiKey: "AIzaSyD1TdhSRvsAG5JS_zsk7-QpfWsuQstG2zg",

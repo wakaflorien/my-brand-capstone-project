@@ -1,28 +1,40 @@
-const loginForm = document.getElementById("loginForm");
+const url = 'https://my-capstone-project-api.herokuapp.com/auth/'
 
-loginForm.addEventListener('submit', e => {
-    e.preventDefault();
+let loginForm = document.getElementById('loginForm')
 
-    login();
+loginForm.addEventListener('submit', e=> {
+    e.preventDefault()
+    
+    login()
 })
+const login = () => {
 
-function login(){
-    let email = document.getElementById("email").value
-    let password = document.getElementById("passwd").value
+    let email = document.getElementById('email').value
+    let password = document.getElementById('passwd').value
 
-    firebase.auth().signInWithEmailAndPassword(email, password)
-    .then( (currentUser) => {
-        let user = currentUser.user 
-
-        const   userData = {
-            last_login: Date.now()
+    let data = {
+        email: email,
+        password: password
+    }
+    let fetchData = {
+        method: 'POST',
+        body: JSON.stringify(data),
+        headers: new Headers({
+            'Content-Type': 'application/json; charset=UTF-8'
+        })
+    }
+    
+    fetch(url, fetchData)
+    .then((response) => {
+        return response.json()
+    }).then((data) => {
+        let user = {
+            message: data.message,
+            token: data.accessToken
         }
-        db.ref().child("Users/" + user.uid).update(userData);
-
-        // console.log("User Logged in")
-          window.location.href = '../pages/dashboard.html';
-    })
-    .catch( (error) => {
-        console.error(error)
+        window.localStorage.setItem('user', JSON.stringify(user))
+        location.href = '../pages/dashboard.html'
+    }).catch((err) => {
+        console.error(err)
     })
 }
