@@ -12,7 +12,6 @@ window.onload = function (){
 let table = document.getElementById("table-container")
 const url = 'https://my-capstone-project-api.herokuapp.com/contact/'
 
-allQueries()
 async function allQueries(){
     const user = JSON.parse(window.localStorage.getItem('user'))
     let fetchData = {
@@ -26,7 +25,7 @@ async function allQueries(){
     .then((response) =>{
         return response.json()
     })
-    .then((data) => {   
+    .then((data) => { 
         let queries = data.queries
         
         queries.map((query)=> {
