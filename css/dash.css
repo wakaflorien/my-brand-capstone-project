@@ -1,0 +1,16 @@
+.link2>a{
+    color: var(--main-green);
+  }
+  .active>a:hover{
+    color: var(--main-green);
+  }
+  .link2{
+    background-color: var(--white);
+    color: var(--main-green) !important;
+  }
+  .link2>a:hover{
+    opacity: 0.8;
+  }
+  .dash-header{
+      text-align: center;
+  }

@@ -1,0 +1,40 @@
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid #ddd;
+  }
+  tr:nth-child(even){background-color: #f2f2f2}
+  th, td {
+    text-align: left;
+    padding: 8px;
+  }
+  #queries{
+    overflow-x: auto;
+  }
+  .delete{
+    cursor: pointer;
+    background-color: #db1f12a6;
+    color: var(--white);
+    font-size: 15px;
+  }
+  
+  .delete:hover{
+    opacity: 0.8;
+  }
+  .link3>a{
+    color: var(--main-green);
+  }
+  .active>a:hover{
+    color: var(--main-green);
+  }
+  .link3{
+    background-color: var(--white);
+    color: var(--main-green) !important;
+  }
+  .link3>a:hover{
+    opacity: 0.8;
+  }
+  #header{
+    text-align: center;
+  }

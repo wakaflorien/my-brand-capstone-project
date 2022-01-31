@@ -10,9 +10,7 @@
   * {
       box-sizing: border-box;
     }
-    /* *, *:before, *:after {
-      box-sizing: inherit;
-    } */
+
     html, body{
       margin: 0;
       padding: 0;
@@ -21,10 +19,9 @@
     }
     .navbar {
       overflow: hidden;
-      /* background-color: #333; */
       position: absolute;
-      left: 30%;
-      top: 60px;
+      left: 40%;
+      top: 40px;
     }
     
     .navbar a {
@@ -39,7 +36,6 @@
     }
     
     .navbar a:hover {
-      /* background-color: #ddd; */
       color: var(--main-green);
       font-weight: 500;
     }
@@ -459,17 +455,6 @@ input[type=text], input[type=password] {
   padding: 500px;
   padding-top: 300px;
 }
-.delete{
-  /* background-color: var(--main-green); */
-  color: var(--white);
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  width: 20% !important;
-  font-size: 20px;
-  font-weight: 500;
-}
 /* Set a style for all buttons */
 button {
   background-color: var(--main-green);
@@ -485,7 +470,6 @@ button {
 
 button:hover {
   opacity: 0.8;
-  color: var(--main-green);
 }
 @media screen and (max-width: 600px) {
   span.psw {
@@ -673,46 +657,45 @@ form>button, textarea{
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding-top: 0px;
   padding-bottom: 0px;
   gap: 3em;
   
-  margin-bottom: -200px;
 }
 .side_panel{
   background-color: var(--main-green);
   height:1000px;
-  width: 200px;
+  width: 10%;
   margin-top: 0px;
 }
 .postForm{
-  width: 60%;
+  width: 80%;
   float: left;
   font-size: 25px;
-  padding-bottom: 10px;
+  margin-top: 0px;
+}
+#articles{
+  width: 80%;
+  float: left;
+  font-size: 25px;
+  margin-top: -200px;
+}
+#queries{
+  width: 80%;
+  float: left;
+  font-size: 25px;
+  margin-top: -400px;
 }
 .quick{
   list-style-type: none;
-  color: var(--white);
   font-size: 20px;
   padding-left: 0;
   margin-top: 150px;
-}
-li>a{
-  text-decoration: none;
-  color: var(--white);
-}
-li>a:hover{
-  color: var(--light-graye);
 }
 .link1, .link2, .link3{
   padding-top: 20px;
   padding-bottom: 20px;
 }
-.link2{
-  background-color: var(--white);
-  color: var(--black) !important;
-}
-.link2:hover{
-  color: inherit !important;
+li>a{
+  text-decoration: none;
+  color: var(--white);
 }

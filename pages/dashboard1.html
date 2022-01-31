@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
-
+    <link rel="stylesheet" href="../css/dash1.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" integrity="sha512-BnbUDfEUfV0Slx6TunuB042k9tuKe3xrD6q4mg5Ed72LTgzDIcLPxg6yI2gcMFRyomt+yJJxE+zJwNmxki6/RA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Upload Post</title>
 </head>
 
@@ -19,14 +20,13 @@
         <a href="../">Portifolio</a>
         <a href="./blog.html">Blog</a>
         <a href="#">Contact</a>
-        <a href="./login.html">Login</a>
+        <a href="#" id="logout">Logout</a>
         <a href="javascript:void(0);" class="icon" onclick="myFunction()">
             <span class="iconify" data-icon="ci:menu-alt-02" style="color: #0FA958; font-size: 43px;"></span>
         </a>
             
     </header>
     <main id="dash2">
-    <!-- <h6 class="reference"><a href="blog.html">Blog/</a><span class="inner">Upload Post</span></h6> -->
     <div class="side_panel">
         <h2 class="quick_links">DashBoard</h2>
         <ul class="quick">
@@ -35,26 +35,17 @@
             <li class="link3"><a href="./dashboard1.html">List of Queries</a></li>
         </ul>
     </div>
-   
+    <div id="queries">
+        <h2 id="header">List of Queries</h2>
+        <table id="table-container">
+            <tr>
+                <th>Query</th>
+                <th>Name</th>
+                <th>Email</th>
+            </tr>
+        </table>
+    </div>
     </main>
-
-    <footer class="footer">
-        <h4 class="email">Send Email</h4>
-        <h4 class="phone">+250786461106</h4>
-        <!-- /* Social media */ -->
-        <a href="https://github.com/wakaflorien"><span class="iconify" data-icon="jam:github-circle"
-                style="color: #f8f8f8; font-size: 43px;"></span></a>
-        <a href="https://twitter.com/urucabana_"><span class="iconify" data-icon="jam:twitter-circle"
-                style="color: #f8f8f8; font-size: 43px;"></span></a>
-        <a href="https://www.linkedin.com/in/florien-niyongabo-7b7971142/"><span class="iconify"
-                data-icon="jam:linkedin-circle" style="color: #f8f8f8; font-size: 43px;"></span></a>
-        <a href="https://www.facebook.com/florien.niyongabo"><span class="iconify" data-icon="jam:facebook-circle"
-                style="color: #f8f8f8; font-size: 43px;"></span></a>
-        <a href="https://www.instagram.com/waka_florien45/"><span class="iconify" data-icon="ri:instagram-line"
-                style="color: #f8f8f8; font-size: 43px;"></span></a>
-        <p class="copy">&copy; Copyright Florien Niyongabo</p>
-    </footer>
-
 
     <script defer src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
     <script defer src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
@@ -62,16 +53,11 @@
     <script defer src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
     <script defer src="/js/firebase.js"></script>
     <script defer src="/js/main.js"></script>
-
     <script src="/js/header.js"></script>
-    <!-- <script src="/js/comments.js"></script> -->
+    <script src="../js/dashboard1.js"></script>
+    <script src="../js/logout.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>
-    
-    <script src="https://cdn.ckeditor.com/4.13.0/standard/ckeditor.js"></script>
-    <script>
-        CKEDITOR.replace( 'post_text' );
-    </script>
 </body>
 
 </html>
