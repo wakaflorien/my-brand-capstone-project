@@ -30,7 +30,6 @@ function addBlog(){
     }, () =>{
         uploadTask.snapshot.ref.getDownloadURL().then( downloadURL => {
             const user = JSON.parse(window.localStorage.getItem('user'))
-            console.log(downloadURL)
             let data = {
                 title: postTitle,
                 subTitle: subTitle,
