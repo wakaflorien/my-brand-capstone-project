@@ -1,35 +1,34 @@
-console.log("Running")
-
-window.onload = function () {
-    let main = document.getElementById("main");
-
-    db.ref("Blogs/").limitToLast(10).once("value", function (snapshot) {
-
-        snapshot.forEach(
-            function (childSnapshot) {
-
-                // console.log(childSnapshot.val())
-                let articles = childSnapshot.val()
-                let article = `
+fetch('https://my-capstone-project-api.herokuapp.com/posts/')
+.then( (response) =>{
+    return response.json()
+})
+.then( (data) => {
+    let posts = data.posts
+    // console.log(posts)
+    posts.map((post)=> {
+        let main = document.getElementById("main");
+        let article = `
                 <article class="post-one">
                     <figure class="img-one">
                         <p class="link"></p>
-                        <h1 class="title" id="title">${articles.post_title}</h1>
-                        <img src="${articles.photoURL}" alt="First img" class="pic-one">
-                        <p class="date">${articles.published}</p>
+                        <h1 class="title" id="title">${post.title}</h1>
+                        <h4>${post.subTitle}</h4>
+                        <img src="${post.imageUrl}" alt="First img" class="pic-one">
+                        <p class="date">${post.dateCreated}</p>
                     </figure>
                     <section class="post-one-p">
-                        <p id="p" class="p">${articles.post_body}</p>
-                        <button class="read-more" onClick="readMore(${articles.postId})" id="${articles.postId}">Read More</button>
+                        <p id="p" class="p">${post.postBody}</p>
+                        <button class="read-more" onClick="readMore(${post._id})" id="${post._id}">Read More</button>
                     </section>
                 </article>`;
 
-                // console.log(article)
+                // console.log(post._id)
                 main.innerHTML += article
-            }
-        )
     })
-}
+})
+.catch( (err) => {
+    console.log(err)
+})
 
 const readMore = (id) => {
     location.href = `./singlepost-one.html?id=${id}`
