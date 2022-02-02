@@ -6,30 +6,41 @@ signupForm.addEventListener('submit', e => {
     signup();
 })
 
-function signup(){
+async function signup(){
     let fName = document.getElementById("fname").value
     let lName = document.getElementById("lname").value
     let email = document.getElementById("email").value
     let password = document.getElementById("passwd").value
 
-    firebase.auth().createUserWithEmailAndPassword(email, password)
-  .then((currentUser) => {
-    let user = currentUser.user
-
-    const userData = {
+    let data = {
         firstname:fName,
         lastname:lName,
         email:email,
-        type: "guest",
-        last_login: Date.now()
+        password: password
     }
-    db.ref().child("Users/" + user.uid).push().set(userData);
+    let fetchData = {
+      method: 'POST',
+        body: JSON.stringify(data),
+        headers: new Headers({
+            'Content-Type': 'application/json; charset=UTF-8',
+            // 'Authorization': `Bearer ${user.token}`
+        })
+    }
+    fetch(`https://my-capstone-project-api.herokuapp.com/register/`, fetchData)
+    .then((response)=>{
+      return response.json()
+    }).then((data)=>{
+      Toastify({
+        text: "User created",
+        className: "info",
+        style: {
+            background: "linear-gradient(to left, #00b09b, #96c93d)",
+        }
+    }).showToast();
+    signupForm.reset();
+    location.href = `./login.html`
+    })
+    .catch(()=>{
 
-    console.log("Successfully created new user")
-      signupForm.reset();
-      window.location.href = '../pages/login.html';
-  })
-  .catch((error) => {
-    console.error(error)
-  });
+    })
 }

@@ -1,5 +1,5 @@
 window.onload = function (){
-    const user = window.localStorage.getItem('user')
+    const user = JSON.parse(window.localStorage.getItem('user'))
 
     if(user){
         allArticles()
@@ -17,8 +17,8 @@ async function allArticles(){
     .then((response) =>{
         return response.json()
     })
-    .then((data) => {   
-        let posts = data.posts
+    .then((data) => {  
+        let posts = data.data.posts
         // console.log(posts)
         posts.map((post)=> {
             let article = `  
@@ -52,6 +52,7 @@ let formModal = document.getElementById("form-container");
     // Get the button that opens the Form modal
 function openFormModal(key){
     formModal.style.display = "block";
+    console.log(key)
     async function updatePost(){
         let form = document.getElementById("postForm");
         let postTitle = document.getElementById("post_title").value
@@ -85,13 +86,12 @@ function openFormModal(key){
                     'Authorization': `Bearer ${user.token}`
                 })
             }
-            
             fetch(`https://my-capstone-project-api.herokuapp.com/posts/${key}`, fetchData)
             .then((response) => {
                 return response.json()
             }).then((data) => {
                 Toastify({
-                    text: `${data.success + " " +data.message}`,
+                    text: `${data.message}`,
                     className: "info",
                     style: {
                         background: "linear-gradient(to left, #00b09b, #96c93d)",
@@ -141,8 +141,9 @@ const delete_post = (key) => {
     .then((response) => {
         return response.json()
     }).then((data) => {
+        
         Toastify({
-            text: `${data.success + " " +data.message}`,
+            text: `${data.message}`,
             className: "info",
             style: {
                 background: "linear-gradient(to left, #00b09b, #96c93d)",
