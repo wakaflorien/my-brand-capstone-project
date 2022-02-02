@@ -29,8 +29,8 @@ const login = () => {
         return response.json()
     }).then((data) => {
         let user = {
-            message: data.message,
-            token: data.accessToken
+            message: data.status,
+            token: data.data.accessToken
         }
         window.localStorage.setItem('user', JSON.stringify(user))
         location.href = '../pages/dashboard.html'

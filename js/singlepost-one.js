@@ -1,116 +1,111 @@
-window.onload = function () {
-    const id = location.search.split('=')[1];
-
-    console.log(id)
-    
-    displayPost(id)
-
-    // Displaying post
-    function displayPost(id){
-        db.ref("Blogs/").get().then((snapshot) => {
-
-            let articles = snapshot.val()
-            let article = document.getElementById("article")
-            // console.log(articles)
-            Object.values(articles).find((obj) => {
-                if (obj.postId == id) {
-                    let html = `
-                                <h6 class="reference"><a href="./blog.html">Blog/</a><span class="inner">Post One</span></h6>
-                                <h2 class="article-one-header">${obj.published}</h2>
-                                <h1>${obj.post_title}</h1>
-                                <img src="${obj.photoURL}" alt="">
-                                <hr>
-                                <p class="article-one-p">
-                                    ${obj.post_body}
-                                </p>`;
-                    article.innerHTML += html
-                }
-            })
-    
-            // console.log(items)
-        }).catch((error) => {
-            console.error(error);
-        })
+const id = location.search.split('=')[1]
+window.onload = function (){
+    displayPost()
+}
+// Displaying post
+async function displayPost(){
+let article = document.getElementById("article")
+let fetchData = {
+    method: 'GET',
+    headers:{
+        'Content-Type': 'application/json; charset=UTF-8'
     }
 }
-firebase.auth().onAuthStateChanged(user => {
-    console.log("Status Changed", user.email);
+await fetch(`https://my-capstone-project-api.herokuapp.com/posts/${id}`, fetchData)
+.then( (response) => {
+    return response.json()
+})
+.then( (data) => {
+    const post = data.data.post
+    let html = `
+        <h6 class="reference"><a href="./blog.html">Blog/</a><span class="inner">Post One</span></h6>
+        <h1 class="article-one-header">${post.title}</h1>
+        <h2>${post.subTitle}</h2>
+        <img src="${post.imageUrl}" alt="">
+        <hr>
+        <p class="article-one-p">
+            ${post.postBody}
+        </p>`;
+    article.innerHTML += html
+    }). catch( error => {
+        console.error(error)
+    })
+}
+let commentSection = document.getElementById("comments_section")
+    let comment = `
+        <form class="comment" id="comments" name="comments">
+            <label for="comments"><b>Leave your comments below !</b></label>
+            <textarea name="comments" id="comment_text" cols="100" rows="10"></textarea>
+            <button type="submit">Comment</button>
+        </form>
+        <h2>Latest Comments</h2>`;
+    commentSection.innerHTML += comment
 
-    let commentSection = document.getElementById("comments_section")
-    if (user) {
-
-        let comment = `
-            <form class="comment" id="comments" name="comments">
-                <label for="comments"><b>Leave your comments below !</b></label>
-                <textarea name="comments" id="comment_text" cols="100" rows="10"></textarea>
-                <button type="submit">Comment</button>
-            </form>
-            {"message":"Logged in ","token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySW5mbyI6eyJpZCI6IjYxZTNlNzVmZTgxNjAzMGNjMjY0NzAwNiIsImVtYWlsIjoid2FrYS5mbG9yaWVuNDVAZ21haWwuY29tIiwicm9sZXMiOlsxOTk4LDUxNTBdfSwiaWF0IjoxNjQzNTUxODY0LCJleHAiOjE2NDM1NTU0NjR9.SvnuQLUYW3wZFZJUoE3z0HujNtbJye6TS_xm8Ped9K4"}
-            <h2>Latest Comments</h2>
-        `;
-        commentSection.innerHTML += comment
-
-        let form = document.getElementById("comments")
-
-        displayComment()
-        
-        form.addEventListener('submit', e => {
-            e.preventDefault();
-            // console.log("Adding form", id)
-
-            addComment();
-        })
-
-        // Adding Comments
-        function addComment() {
-            let commentText = document.getElementById("comment_text").value;
-            console.log("Comment message",commentText)
-            let commentId = Math.floor((Math.random() * 100) + 1);
-    
-            db.ref("comments/").push().set({ 
-                commentId:commentId,
-                // postId: id,
-                commentMessage: commentText,
-                commentator: user.email,
-                published: firebase.database.ServerValue.TIMESTAMP
-            }, function (error) {
-                if (error) {
-                    console.error(error)
-                }
-                else {
-                    // console.log(commentText.value)
-                    Toastify({
-                        text: "Comment Added Successfully!",
-                        className: "info",
-                        style: {
-                            background: "linear-gradient(to left, #00b09b, #96c93d)",
-                        }
-                    }).showToast();
-    
-                    form.reset();
-                }
-            })
+async function displayComment() {
+    console.log(id)
+    let commentSection = document.getElementById("comments_section");
+    let fetchData = {
+        method: 'GET',
+        headers:{
+            'Content-Type': 'application/json; charset=UTF-8'
         }
-        function displayComment() {
-            let commentSection = document.getElementById("comments_section");
-    
-            db.ref("comments/").limitToLast(10).once("value", function (snapshot) {
-                snapshot.forEach(
-                    function (childSnapshot) {
-                        // console.log("id logging", id)
-                        let comments = childSnapshot.val()
-                        let commentsContent = `
-                        <p class="commentClass">${comments.commentMessage}</p>
-                        <h5 class="time-stamp">${comments.published}&nbsp;&nbsp;&nbsp;<span class="commantetor">By ${comments.commentator}</span></h5>`;
-                            commentSection.innerHTML += commentsContent
-                        // if (comments.postId == id) {
-                        //     // console.log(comments)
-                        //     commentSection.innerHTML += commentsContent
-                        // }
-                    }
-                )
-            })
-        }
-        
     }
+    await fetch(`https://my-capstone-project-api.herokuapp.com/comments/`, fetchData)
+    .then( (response) => {
+        return response.json()
+    })
+    .then((data) => {
+        console.log(data.data.comments)
+        const comments = data.data.comments
+        comments.map(comment => {
+
+        let commentsContent = `
+        <p class="commentClass">${comment.message}</p>
+        <h5 class="time-stamp">${comment.dateCreated}&nbsp;&nbsp;&nbsp;<span class="commantetor">By ${comment.commentator}</span></h5>`;
+        commentSection.innerHTML += commentsContent
+        })
+    })
+    .catch((error) => {
+        console.log(error)
+    })
+}
+displayComment()
+let add = document.getElementById("comments")
+async function addComment() {
+    console.log(id)
+    let commentText = document.getElementById("comment_text").value;
+    let data = {
+    message: commentText,
+    commentator: 'user',
+    postId: id
+    }
+    let fetchData = {
+        method: 'POST',
+        body: JSON.stringify(data),
+        headers: {
+            'Content-Type': 'application/json; charset=UTF-8'
+        }
+    }
+    await fetch(`https://my-capstone-project-api.herokuapp.com/comments/`, fetchData)
+    .then( (response) => {
+        return response.json()
+    })
+    .then((data) => {
+        Toastify({
+            text: "Comment Added",
+            className: "info",
+            style: {
+                background: "linear-gradient(to left, #00b09b, #96c93d)",
+            }
+        }).showToast();
+
+        form.reset();
+    })
+    .catch((error) => {
+        console.log(error)
+    })
+}
+add.addEventListener('submit', (e)=> {
+    e.preventDefault()
+    addComment()
 })

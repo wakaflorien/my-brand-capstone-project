@@ -1,10 +1,17 @@
-fetch('https://my-capstone-project-api.herokuapp.com/posts/')
+let fetchData = {
+    method: 'GET',
+    headers: new Headers({
+        'Content-Type': 'application/json; charset=UTF-8',
+        'Origin': 'http://127.0.0.1:5500'
+    })
+}
+fetch('https://my-capstone-project-api.herokuapp.com/posts/', fetchData)
 .then((response) =>{
     return response.json()
 })
 .then((data) => {   
-    let posts = data.posts
-    console.log(posts)
+    
+    let posts = data.data.posts
     posts.map((post)=> {
         let main = document.getElementById("main")
         let article = `
@@ -18,19 +25,15 @@ fetch('https://my-capstone-project-api.herokuapp.com/posts/')
                     </figure>
                     <section class="post-one-p">
                         <p id="p" class="p">${post.postBody}</p>
-                        <button class="read-more" onClick="readMore(${post._id})" id="${post._id}">Read More</button>
+                        <button class="read-more" id="${post._id}" onClick="readMore(this.id)">Read More</button>
                     </section>
                 </article>`;
-
-                // console.log(post._id)
                 main.innerHTML += article
     })
-})
-.catch((err) => {
+}).catch((err) => {
     console.error(err)
 })
 
 const readMore = (id) => {
-    console.log(id)
     location.href = `./singlepost-one.html?id=${id}`
 }

@@ -1,8 +1,7 @@
 window.onload = function (){
-    const user = window.localStorage.getItem('user')
-
+    const user = JSON.parse(window.localStorage.getItem('user'))
     if(user){
-        allQueries()
+        allQueries(user)
     }
     else{
         location.href = `../pages/login.html`
@@ -12,8 +11,7 @@ window.onload = function (){
 let table = document.getElementById("table-container")
 const url = 'https://my-capstone-project-api.herokuapp.com/contact/'
 
-async function allQueries(){
-    const user = JSON.parse(window.localStorage.getItem('user'))
+async function allQueries(user){
     let fetchData = {
         method: 'GET',
         headers: new Headers({
@@ -26,7 +24,7 @@ async function allQueries(){
         return response.json()
     })
     .then((data) => { 
-        let queries = data.queries
+        let queries = data.data.queries
         
         queries.map((query)=> {
             let allQuery = `  
@@ -39,9 +37,7 @@ async function allQueries(){
             </td>
             </tr>
             `;
-    
-                    // console.log(query._id)
-                    table.innerHTML += allQuery
+            table.innerHTML += allQuery
         })
     })
     .catch((err) => {
@@ -63,7 +59,7 @@ const delete_query = (id) => {
         return response.json()
     }).then((data) => {
         Toastify({
-            text: `${data.success + " " +data.message}`,
+            text: `${data.message}`,
             className: "info",
             style: {
                 background: "linear-gradient(to left, #00b09b, #96c93d)",
