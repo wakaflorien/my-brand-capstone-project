@@ -50,7 +50,7 @@ function addBlog(){
                 return response.json()
             }).then((data) => {
                 Toastify({
-                    text: `${data.success + " " +data.message}`,
+                    text: `${data.message}`,
                     className: "info",
                     style: {
                         background: "linear-gradient(to left, #00b09b, #96c93d)",
